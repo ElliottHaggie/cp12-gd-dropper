@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk5pxwcvdq143"]
+
+[ext_resource type="Script" uid="uid://cgoao3jawj2hc" path="res://BetterBasket.gd" id="1_bqx5j"]
+[ext_resource type="Texture2D" uid="uid://bptmx18olwbvj" path="res://Sprites/basket.png" id="1_deg5h"]
+[ext_resource type="Script" uid="uid://dpc0opghkjwjj" path="res://BetterApple.gd" id="2_yxsk7"]
+[ext_resource type="Texture2D" uid="uid://dajoxbly3vkls" path="res://Sprites/apple.png" id="3_bqx5j"]
+[ext_resource type="Script" uid="uid://dwn6hop0ng83g" path="res://score.gd" id="5_njxy8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_njxy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqx5j"]
+size = Vector2(56, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njxy8"]
+size = Vector2(1153.5, 17)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Apple" type="CharacterBody2D" parent="."]
+physics_interpolation_mode = 2
+position = Vector2(567, -63)
+script = ExtResource("2_yxsk7")
+
+[node name="Apple_Sprite" type="Sprite2D" parent="Apple"]
+position = Vector2(1, -1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_bqx5j")
+
+[node name="Apple_Collision" type="CollisionShape2D" parent="Apple"]
+rotation = 1.58484
+shape = SubResource("CircleShape2D_njxy8")
+
+[node name="Basket" type="CharacterBody2D" parent="."]
+position = Vector2(549, 569)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_bqx5j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_bqx5j")
+
+[node name="Basket_Sprite" type="Sprite2D" parent="Basket"]
+position = Vector2(-2.27374e-13, -4.76837e-07)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_deg5h")
+
+[node name="Area2D" type="Area2D" parent="Basket"]
+
+[node name="Basket_Collision" type="CollisionPolygon2D" parent="Basket/Area2D"]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-28, -15, -28, 3, -14, 13, 0, 13, 14, 13, 28, 3, 28, -16, 21, 4, -21, 4)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 7.0
+offset_top = 601.0
+offset_right = 109.0
+offset_bottom = 642.0
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 107.0
+offset_bottom = 35.0
+text = "Score: 0"
+vertical_alignment = 1
+script = ExtResource("5_njxy8")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(592, 759)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-16.75, -103)
+shape = SubResource("RectangleShape2D_njxy8")
+
+[connection signal="body_entered" from="Basket/Area2D" to="Apple" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Basket/Area2D" to="Panel/Score" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Panel/Score" method="_on_area_2d_body_entered"]
