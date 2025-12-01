@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk5pxwcvdq143"]
+[gd_scene load_steps=10 format=3 uid="uid://bk5pxwcvdq143"]
 
 [ext_resource type="Script" uid="uid://cgoao3jawj2hc" path="res://BetterBasket.gd" id="1_bqx5j"]
 [ext_resource type="Texture2D" uid="uid://bptmx18olwbvj" path="res://Sprites/basket.png" id="1_deg5h"]
+[ext_resource type="Texture2D" uid="uid://g0thxdoenbv8" path="res://Sprites/tree.webp" id="1_i7l3n"]
 [ext_resource type="Script" uid="uid://dpc0opghkjwjj" path="res://BetterApple.gd" id="2_yxsk7"]
 [ext_resource type="Texture2D" uid="uid://dajoxbly3vkls" path="res://Sprites/apple.png" id="3_bqx5j"]
 [ext_resource type="Script" uid="uid://dwn6hop0ng83g" path="res://score.gd" id="5_njxy8"]
@@ -15,6 +16,10 @@ size = Vector2(56, 28)
 size = Vector2(1153.5, 17)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(560, 355)
+texture = ExtResource("1_i7l3n")
 
 [node name="Apple" type="CharacterBody2D" parent="."]
 physics_interpolation_mode = 2
