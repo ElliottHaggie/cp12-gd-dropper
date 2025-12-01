@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk5pxwcvdq143"]
+[gd_scene load_steps=9 format=3 uid="uid://bk5pxwcvdq143"]
 
 [ext_resource type="Script" uid="uid://cgoao3jawj2hc" path="res://BetterBasket.gd" id="1_bqx5j"]
 [ext_resource type="Texture2D" uid="uid://bptmx18olwbvj" path="res://Sprites/basket.png" id="1_deg5h"]
@@ -11,9 +11,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bqx5j"]
 size = Vector2(56, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_njxy8"]
-size = Vector2(1153.5, 17)
 
 [node name="Node2D" type="Node2D"]
 
@@ -76,13 +73,5 @@ text = "Score: 0"
 vertical_alignment = 1
 script = ExtResource("5_njxy8")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(592, 759)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-16.75, -103)
-shape = SubResource("RectangleShape2D_njxy8")
-
 [connection signal="body_entered" from="Basket/Area2D" to="Apple" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Basket/Area2D" to="Panel/Score" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Panel/Score" method="_on_area_2d_body_entered"]
