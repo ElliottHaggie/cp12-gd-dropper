@@ -59,17 +59,18 @@ position = Vector2(0, 3)
 polygon = PackedVector2Array(-28, -15, -28, 3, -14, 13, 0, 13, 14, 13, 28, 3, 28, -16, 21, 4, -21, 4)
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 7.0
-offset_top = 601.0
-offset_right = 109.0
-offset_bottom = 642.0
+offset_left = 15.0
+offset_top = 539.0
+offset_right = 111.0
+offset_bottom = 571.0
+scale = Vector2(3, 3)
 
 [node name="Score" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 4.0
-offset_right = 107.0
-offset_bottom = 35.0
+offset_left = 3.33333
+offset_top = 0.666667
+offset_right = 104.333
+offset_bottom = 31.6667
 text = "Score: 0"
 vertical_alignment = 1
 script = ExtResource("5_njxy8")
