@@ -59,8 +59,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8pm"]
 bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
 
-[node name="Control" type="Control"]
-visible = false
+[node name="lose screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,13 +68,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_27qcu")
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="greyout background" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 1159.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6u8pm")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="maskingpanel" type="Panel" parent="."]
 clip_children = 2
 layout_mode = 2
 offset_left = 415.0
@@ -83,13 +82,13 @@ offset_top = 176.0
 offset_right = 690.0
 offset_bottom = 418.0
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="maskingpanel"]
 layout_mode = 0
 offset_right = 275.0
 offset_bottom = 242.0
 texture = ExtResource("1_ac0gk")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="you lose label" type="Label" parent="maskingpanel"]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 58.0
@@ -101,7 +100,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="restart button" type="Button" parent="maskingpanel"]
 layout_mode = 0
 offset_left = 17.0
 offset_top = 205.0
@@ -109,7 +108,7 @@ offset_right = 88.0
 offset_bottom = 236.0
 text = "Restart"
 
-[node name="Button2" type="Button" parent="Panel"]
+[node name="quit button" type="Button" parent="maskingpanel"]
 layout_mode = 0
 offset_left = 186.0
 offset_top = 205.0
