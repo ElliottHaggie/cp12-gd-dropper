@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://s5gcad3p0euk"]
+
+[ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ac0gk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0f8n"]
+bg_color = Color(0.960599, 0.172943, 0.186197, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.976471, 0.282353, 0.262745, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27qcu"]
+bg_color = Color(0.799802, 0.110182, 0.133144, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npyof"]
+bg_color = Color(0.972802, 0.247363, 0.236382, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fs1l"]
+bg_color = Color(0.960599, 0.172943, 0.186197, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.784314, 0.784314, 0.784314, 0.815686)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snsv5"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 0.85098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_27qcu"]
+Button/styles/focus = SubResource("StyleBoxFlat_n0f8n")
+Button/styles/hover = SubResource("StyleBoxFlat_27qcu")
+Button/styles/normal = SubResource("StyleBoxFlat_npyof")
+Button/styles/pressed = SubResource("StyleBoxFlat_7fs1l")
+Label/colors/font_color = Color(1, 0.356863, 0.290196, 1)
+Label/colors/font_outline_color = Color(1, 0.741176, 0.698039, 1)
+Label/colors/font_shadow_color = Color(0.596078, 0, 0, 1)
+Label/font_sizes/font_size = 45
+Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8pm"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
+
+[node name="Control" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_27qcu")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u8pm")
+
+[node name="Panel" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 2
+offset_left = 415.0
+offset_top = 176.0
+offset_right = 690.0
+offset_bottom = 418.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_right = 275.0
+offset_bottom = 242.0
+texture = ExtResource("1_ac0gk")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 58.0
+offset_right = 251.0
+offset_bottom = 121.0
+rotation = -0.102786
+text = "You Lose!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 205.0
+offset_right = 88.0
+offset_bottom = 236.0
+text = "Restart"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 205.0
+offset_right = 257.0
+offset_bottom = 236.0
+text = "Quit"
