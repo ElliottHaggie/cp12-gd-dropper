@@ -1,0 +1,14 @@
+extends Control
+
+
+func _on_restart_button_pressed() -> void:
+	Global.score = 0
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+	
+	pass # Replace with function body.
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().quit()

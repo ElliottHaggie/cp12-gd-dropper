@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://s5gcad3p0euk"]
+[gd_scene load_steps=10 format=3 uid="uid://s5gcad3p0euk"]
 
 [ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ac0gk"]
+[ext_resource type="Script" uid="uid://dighvfqecuw8t" path="res://better_lose_screen.gd" id="1_npyof"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0f8n"]
 bg_color = Color(0.960599, 0.172943, 0.186197, 1)
@@ -60,6 +61,7 @@ Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
 bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
 
 [node name="lose screen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,6 +69,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_27qcu")
+script = ExtResource("1_npyof")
 
 [node name="greyout background" type="Panel" parent="."]
 layout_mode = 0
@@ -115,3 +118,6 @@ offset_top = 205.0
 offset_right = 257.0
 offset_bottom = 236.0
 text = "Quit"
+
+[connection signal="pressed" from="maskingpanel/restart button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="maskingpanel/quit button" to="." method="_on_quit_button_pressed"]
