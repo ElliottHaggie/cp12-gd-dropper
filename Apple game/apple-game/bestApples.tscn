@@ -18,6 +18,7 @@ size = Vector2(56, 28)
 script = ExtResource("1_cndr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(612, -24)
 scale = Vector2(1.4025, 1.33083)
 texture = ExtResource("1_i7l3n")
@@ -40,8 +41,7 @@ shape = SubResource("CircleShape2D_njxy8")
 [node name="Basket" type="CharacterBody2D" parent="."]
 position = Vector2(549, 569)
 scale = Vector2(3, 3)
-collision_layer = 0
-collision_mask = 0
+motion_mode = 1
 script = ExtResource("1_bqx5j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
@@ -75,6 +75,11 @@ offset_bottom = 31.6667
 text = "Score: 0"
 vertical_alignment = 1
 script = ExtResource("5_njxy8")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 800, 0, 0, 0, 780, 1152, 780, 1152, 0, 1620, 800)
 
 [node name="lose screen" parent="." instance=ExtResource("7_djlcx")]
 visible = false
