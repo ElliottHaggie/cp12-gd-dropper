@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmmfqmsifrg01"]
+
+[ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ncxyx"]
+[ext_resource type="Script" uid="uid://ctkncmp33puvv" path="res://start_screen.gd" id="1_pevhg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0f8n"]
+bg_color = Color(0.960599, 0.172943, 0.186197, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.976471, 0.282353, 0.262745, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27qcu"]
+bg_color = Color(0.799802, 0.110182, 0.133144, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npyof"]
+bg_color = Color(0.972802, 0.247363, 0.236382, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fs1l"]
+bg_color = Color(0.960599, 0.172943, 0.186197, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.784314, 0.784314, 0.784314, 0.815686)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snsv5"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 0.85098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_27qcu"]
+Button/styles/focus = SubResource("StyleBoxFlat_n0f8n")
+Button/styles/hover = SubResource("StyleBoxFlat_27qcu")
+Button/styles/normal = SubResource("StyleBoxFlat_npyof")
+Button/styles/pressed = SubResource("StyleBoxFlat_7fs1l")
+Label/colors/font_color = Color(1, 0.356863, 0.290196, 1)
+Label/colors/font_outline_color = Color(1, 0.741176, 0.698039, 1)
+Label/colors/font_shadow_color = Color(0.596078, 0, 0, 1)
+Label/font_sizes/font_size = 45
+Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8pm"]
+bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
+
+[node name="start screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_27qcu")
+script = ExtResource("1_pevhg")
+
+[node name="greyout background" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6u8pm")
+
+[node name="maskingpanel" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 2
+offset_left = 350.0
+offset_top = 202.0
+offset_right = 757.0
+offset_bottom = 444.0
+
+[node name="TextureRect" type="TextureRect" parent="maskingpanel"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -129.0
+offset_right = 414.0
+offset_bottom = 266.0
+texture = ExtResource("1_ncxyx")
+stretch_mode = 1
+flip_h = true
+
+[node name="Apple Game!" type="Label" parent="maskingpanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 58.0
+offset_right = 251.0
+offset_bottom = 121.0
+rotation = -0.102786
+text = "Apple Dropper!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="title subtext label" type="Label" parent="maskingpanel"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 90.0
+offset_right = 317.0
+offset_bottom = 153.0
+rotation = -0.0918848
+theme_override_font_sizes/font_size = 20
+text = "Friction is for the weak!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="controls labek" type="Label" parent="maskingpanel"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 173.0
+offset_right = 292.0
+offset_bottom = 236.0
+rotation = 0.0658334
+theme_override_font_sizes/font_size = 20
+text = "W & D for controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start button" type="Button" parent="maskingpanel"]
+offset_left = 17.0
+offset_top = 204.0
+offset_right = 88.0
+offset_bottom = 235.0
+text = "Start"
+
+[node name="quit button" type="Button" parent="maskingpanel"]
+offset_left = 316.0
+offset_top = 202.0
+offset_right = 387.0
+offset_bottom = 233.0
+text = "Quit"
+
+[connection signal="pressed" from="maskingpanel/start button" to="." method="_on_start_button_pressed"]

@@ -6,5 +6,3 @@ extends Node2D
 func _on_apple_lost() -> void:
 	losescreen.show()
 	get_tree().paused = true
-
-	pass
