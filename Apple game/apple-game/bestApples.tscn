@@ -32,6 +32,7 @@ Label/font_sizes/font_size = 18
 script = ExtResource("1_cndr6")
 
 [node name="Tree" type="Sprite2D" parent="."]
+
 position = Vector2(612, -24)
 scale = Vector2(1.4025, 1.33083)
 texture = ExtResource("1_i7l3n")
