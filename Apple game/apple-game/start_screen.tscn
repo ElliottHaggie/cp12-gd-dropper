@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmmfqmsifrg01"]
+[gd_scene load_steps=11 format=3 uid="uid://bmmfqmsifrg01"]
 
 [ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ncxyx"]
 [ext_resource type="Script" uid="uid://ctkncmp33puvv" path="res://start_screen.gd" id="1_pevhg"]
@@ -60,6 +60,8 @@ Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8pm"]
 bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pevhg"]
+
 [node name="start screen" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -84,6 +86,7 @@ offset_left = 350.0
 offset_top = 202.0
 offset_right = 757.0
 offset_bottom = 444.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pevhg")
 
 [node name="TextureRect" type="TextureRect" parent="maskingpanel"]
 layout_mode = 0
@@ -132,6 +135,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="start button" type="Button" parent="maskingpanel"]
+layout_mode = 0
 offset_left = 17.0
 offset_top = 204.0
 offset_right = 88.0
@@ -139,6 +143,7 @@ offset_bottom = 235.0
 text = "Start"
 
 [node name="quit button" type="Button" parent="maskingpanel"]
+layout_mode = 0
 offset_left = 316.0
 offset_top = 202.0
 offset_right = 387.0

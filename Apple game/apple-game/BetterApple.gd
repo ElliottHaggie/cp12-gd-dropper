@@ -17,7 +17,6 @@ func silly():
 	
 func _physics_process(delta: float) -> void:
 	velocity.y += 0.5
-	print(velocity.y)
 	move_and_slide()
 	
 	if position.y > get_viewport().size.y + 20:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://s5gcad3p0euk"]
+[gd_scene load_steps=11 format=3 uid="uid://s5gcad3p0euk"]
 
 [ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ac0gk"]
 [ext_resource type="Script" uid="uid://dighvfqecuw8t" path="res://better_lose_screen.gd" id="1_npyof"]
@@ -60,6 +60,8 @@ Panel/styles/panel = SubResource("StyleBoxFlat_snsv5")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6u8pm"]
 bg_color = Color(0.0768358, 0.0768358, 0.0768358, 0.129412)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mnh3"]
+
 [node name="lose screen" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -84,6 +86,7 @@ offset_left = 415.0
 offset_top = 176.0
 offset_right = 690.0
 offset_bottom = 418.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mnh3")
 
 [node name="TextureRect" type="TextureRect" parent="maskingpanel"]
 layout_mode = 0
