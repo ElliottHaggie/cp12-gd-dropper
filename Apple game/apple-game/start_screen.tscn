@@ -130,7 +130,7 @@ offset_right = 292.0
 offset_bottom = 236.0
 rotation = 0.0658334
 theme_override_font_sizes/font_size = 20
-text = "W & D for controls"
+text = "A & D for controls"
 horizontal_alignment = 1
 vertical_alignment = 1
 
