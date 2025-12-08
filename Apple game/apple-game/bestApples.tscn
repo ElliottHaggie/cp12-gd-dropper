@@ -23,16 +23,15 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_4kprb"]
-Label/colors/font_color = Color(1, 0.356863, 0.290196, 1)
-Label/colors/font_outline_color = Color(0.596078, 0, 0, 1)
-Label/colors/font_shadow_color = Color(1, 0.741176, 0.698039, 1)
+Label/colors/font_color = Color(1, 0.425752, 0.357398, 1)
+Label/colors/font_outline_color = Color(1, 0.741176, 0.698039, 1)
+Label/colors/font_shadow_color = Color(0.596078, 0, 0, 1)
 Label/font_sizes/font_size = 18
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cndr6")
 
 [node name="Tree" type="Sprite2D" parent="."]
-
 position = Vector2(612, -24)
 scale = Vector2(1.4025, 1.33083)
 texture = ExtResource("1_i7l3n")
@@ -73,7 +72,7 @@ texture = ExtResource("1_deg5h")
 
 [node name="Basket_Collision" type="CollisionPolygon2D" parent="Basket/Area2D"]
 position = Vector2(0, 3)
-polygon = PackedVector2Array(-28, -15, -28, 3, -14, 13, 0, 13, 14, 13, 28, 3, 28, -16, 21, 4, -21, 4)
+polygon = PackedVector2Array(-28, -15, -23, 0.333328, -14, 13, 0, 13, 14, 13, 23.3333, 2, 28, -16, 19, 4, -19, 3.66667)
 
 [node name="Panel" type="Panel" parent="."]
 clip_children = 1
@@ -96,13 +95,19 @@ stretch_mode = 2
 
 [node name="Score" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 3.0
-offset_top = -0.666667
-offset_right = 71.0
-offset_bottom = 25.3333
+offset_left = 3.33333
+offset_top = 1.0
+offset_right = 647.333
+offset_bottom = 235.0
 rotation = 0.000161832
+scale = Vector2(0.1, 0.1)
 theme = SubResource("Theme_4kprb")
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 171
 text = "Score: 0"
+horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_njxy8")
 
