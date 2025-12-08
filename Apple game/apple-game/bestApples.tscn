@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://bk5pxwcvdq143"]
+[gd_scene load_steps=17 format=3 uid="uid://bk5pxwcvdq143"]
 
 [ext_resource type="Script" uid="uid://cgoao3jawj2hc" path="res://BetterBasket.gd" id="1_bqx5j"]
 [ext_resource type="Script" uid="uid://08fgcgycvoqk" path="res://main.gd" id="1_cndr6"]
 [ext_resource type="Texture2D" uid="uid://bptmx18olwbvj" path="res://Sprites/basket.png" id="1_deg5h"]
-[ext_resource type="Texture2D" uid="uid://g0thxdoenbv8" path="res://Sprites/tree.webp" id="1_i7l3n"]
+[ext_resource type="Texture2D" uid="uid://bp8uvshr5icuv" path="res://Sprites/bliss.png" id="2_4kprb"]
 [ext_resource type="Script" uid="uid://dpc0opghkjwjj" path="res://BetterApple.gd" id="2_yxsk7"]
 [ext_resource type="Texture2D" uid="uid://dajoxbly3vkls" path="res://Sprites/apple.png" id="3_bqx5j"]
 [ext_resource type="Script" uid="uid://dwn6hop0ng83g" path="res://score.gd" id="5_njxy8"]
+[ext_resource type="Texture2D" uid="uid://br3gglndm80mh" path="res://Sprites/grass.png" id="7_8xj16"]
 [ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="7_64dt2"]
 [ext_resource type="PackedScene" uid="uid://s5gcad3p0euk" path="res://better_lose_screen.tscn" id="7_djlcx"]
+[ext_resource type="Texture2D" uid="uid://rogfea0pdnrn" path="res://Sprites/branch.png" id="8_4kprb"]
 [ext_resource type="PackedScene" uid="uid://bmmfqmsifrg01" path="res://start_screen.tscn" id="9_0dwig"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_njxy8"]
@@ -31,10 +33,10 @@ Label/font_sizes/font_size = 18
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cndr6")
 
-[node name="Tree" type="Sprite2D" parent="."]
-position = Vector2(612, -24)
-scale = Vector2(1.4025, 1.33083)
-texture = ExtResource("1_i7l3n")
+[node name="Bliss" type="Sprite2D" parent="."]
+position = Vector2(574, 503)
+scale = Vector2(3.85333, 4.20747)
+texture = ExtResource("2_4kprb")
 
 [node name="Apple" type="CharacterBody2D" parent="."]
 physics_interpolation_mode = 2
@@ -73,6 +75,15 @@ texture = ExtResource("1_deg5h")
 [node name="Basket_Collision" type="CollisionPolygon2D" parent="Basket/Area2D"]
 position = Vector2(0, 3)
 polygon = PackedVector2Array(-28, -15, -23, 0.333328, -14, 13, 0, 13, 14, 13, 23.3333, 2, 28, -16, 19, 4, -19, 3.66667)
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(477, 675)
+scale = Vector2(0.503912, 0.552201)
+texture = ExtResource("7_8xj16")
+
+[node name="Branch" type="Sprite2D" parent="."]
+position = Vector2(687, -23)
+texture = ExtResource("8_4kprb")
 
 [node name="Panel" type="Panel" parent="."]
 clip_children = 1
