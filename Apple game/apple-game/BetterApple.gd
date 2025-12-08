@@ -13,9 +13,12 @@ func silly():
 	position.y = -10
 	position.x = randi_range(52, get_viewport().size.x - 52)
 	velocity_max += 1
-	velocity.y = velocity_max
+	velocity.y = (velocity_max/2)
 
 func _physics_process(delta: float) -> void:
+	if velocity.y < velocity_max:
+		velocity.y += (10 + velocity_max/velocity.y)
+	
 	move_and_slide()
 	
 	if position.y > get_viewport().size.y + 20:
