@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bk5pxwcvdq143"]
+[gd_scene load_steps=19 format=3 uid="uid://bk5pxwcvdq143"]
 
 [ext_resource type="Script" uid="uid://cgoao3jawj2hc" path="res://BetterBasket.gd" id="1_bqx5j"]
 [ext_resource type="Script" uid="uid://08fgcgycvoqk" path="res://main.gd" id="1_cndr6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://rogfea0pdnrn" path="res://Sprites/branch.png" id="8_4kprb"]
 [ext_resource type="PackedScene" uid="uid://bmmfqmsifrg01" path="res://start_screen.tscn" id="9_0dwig"]
 [ext_resource type="Texture2D" uid="uid://c4kn6ag1uv5un" path="res://Sprites/post.png" id="10_x23lv"]
+[ext_resource type="PackedScene" uid="uid://bvr327uwjgmvr" path="res://better_win_screen.tscn" id="12_x23lv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_njxy8"]
 
@@ -94,6 +95,9 @@ offset_left = -6.0
 offset_top = -3.0
 offset_right = -6.0
 offset_bottom = -3.0
+
+[node name="win screen" parent="." instance=ExtResource("12_x23lv")]
+visible = false
 
 [node name="start screen" parent="." instance=ExtResource("9_0dwig")]
 offset_left = -1.0
