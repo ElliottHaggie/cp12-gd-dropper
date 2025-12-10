@@ -7,6 +7,7 @@ var velocity_max = 200
 func _ready():
 	velocity = Vector2(0, 120)
 	position.x = randi_range(52, get_viewport().size.x - 52)
+	position.y = -10
 
 
 func silly():

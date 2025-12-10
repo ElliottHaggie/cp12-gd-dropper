@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmmfqmsifrg01"]
+[gd_scene load_steps=12 format=3 uid="uid://bmmfqmsifrg01"]
 
 [ext_resource type="Texture2D" uid="uid://cro0ojhbogm15" path="res://Sprites/Wood.jpg" id="1_ncxyx"]
 [ext_resource type="Script" uid="uid://ctkncmp33puvv" path="res://start_screen.gd" id="1_pevhg"]
+[ext_resource type="Texture2D" uid="uid://c4kn6ag1uv5un" path="res://Sprites/post.png" id="2_afy8x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0f8n"]
 bg_color = Color(0.960599, 0.172943, 0.186197, 1)
@@ -79,6 +80,18 @@ offset_right = 1159.0
 offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6u8pm")
 
+[node name="Post" type="Sprite2D" parent="."]
+position = Vector2(355, 372)
+rotation = -1.86954
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_afy8x")
+
+[node name="Post2" type="Sprite2D" parent="."]
+position = Vector2(358, 266)
+rotation = -1.36332
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_afy8x")
+
 [node name="maskingpanel" type="Panel" parent="."]
 clip_children = 2
 layout_mode = 2
@@ -150,4 +163,46 @@ offset_right = 387.0
 offset_bottom = 233.0
 text = "Quit"
 
+[node name="maskingpanel2" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 0
+offset_left = 258.0
+offset_top = 214.0
+offset_right = 331.0
+offset_bottom = 419.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pevhg")
+
+[node name="TextureRect" type="TextureRect" parent="maskingpanel2"]
+layout_mode = 0
+offset_left = -343.0
+offset_top = -186.0
+offset_right = 78.0
+offset_bottom = 209.0
+texture = ExtResource("1_ncxyx")
+stretch_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="maskingpanel2"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 17.0
+offset_right = 77.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 20
+text = "End
+less 
+Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="endless start button" type="Button" parent="maskingpanel2"]
+process_mode = 3
+layout_mode = 0
+offset_left = 1.0
+offset_top = 174.0
+offset_right = 72.0
+offset_bottom = 205.0
+text = "Endless"
+
 [connection signal="pressed" from="maskingpanel/start button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="maskingpanel2/endless start button" to="." method="_on_endless_start_button_pressed"]
