@@ -159,5 +159,34 @@ text = "score:"
 vertical_alignment = 1
 script = ExtResource("5_njxy8")
 
+[node name="Panel2" type="Panel" parent="."]
+clip_children = 1
+offset_left = 834.0
+offset_top = 6.0
+offset_right = 938.0
+offset_bottom = 30.0
+scale = Vector2(3, 3)
+theme_override_styles/panel = SubResource("StyleBoxFlat_8xj16")
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+offset_left = 144.667
+offset_top = -7.33333
+offset_right = 419.667
+offset_bottom = 175.667
+rotation = 1.57036
+texture = ExtResource("7_64dt2")
+stretch_mode = 2
+
+[node name="LivesLabel" type="Label" parent="Panel2"]
+offset_right = 603.0
+offset_bottom = 234.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(1, 0.427451, 0.356863, 1)
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 171
+text = "Lives: 3"
+
 [connection signal="lost" from="Apple" to="." method="_on_apple_lost"]
 [connection signal="body_entered" from="Basket/Area2D" to="Apple" method="_on_area_2d_body_entered"]

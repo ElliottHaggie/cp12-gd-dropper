@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	if position.y > get_viewport().size.y + 20:
 		lost.emit()
 		silly()
-		apple.hide()
+		
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	Global.Score_Gained()
